@@ -23,6 +23,12 @@
     height: auto;
 }
 
+.w-75 a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
 #loginSide {
     background: linear-gradient(135deg, #38BCFF 0%, #38BCFF 78%, #FFFFFF 100%);
     display: flex;

@@ -113,62 +113,62 @@
                     </div>
                     <img src="media/images/utilities/paw.png" alt="Paw Image" class="paw">
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const transitionContainer = document.getElementById('transitionContainer');
-            transitionContainer.classList.remove('hidden');
-        });
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const transitionContainer = document.getElementById('transitionContainer');
+                transitionContainer.classList.remove('hidden');
+            });
 
-        function showPetQuestions() {
-            const firstQuestion = document.querySelector('.selection');
-            const additionalQuestions = document.getElementById('additionalQuestions');
+            function showPetQuestions() {
+                const firstQuestion = document.querySelector('.selection');
+                const additionalQuestions = document.getElementById('additionalQuestions');
 
-            firstQuestion.classList.add('slide-out');
-            additionalQuestions.style.display = 'block';
-            void additionalQuestions.offsetWidth;
-            additionalQuestions.classList.add('show');
-        }
+                firstQuestion.classList.add('slide-out');
+                additionalQuestions.style.display = 'block';
+                void additionalQuestions.offsetWidth;
+                additionalQuestions.classList.add('show');
+            }
 
-        function goBack() {
-            const firstQuestion = document.querySelector('.selection');
-            const additionalQuestions = document.getElementById('additionalQuestions');
-            additionalQuestions.classList.remove('show');
-            firstQuestion.classList.remove('slide-out');
-            setTimeout(() => {
-                additionalQuestions.style.display = 'none';
-            }, 500);
-        }
+            function goBack() {
+                const firstQuestion = document.querySelector('.selection');
+                const additionalQuestions = document.getElementById('additionalQuestions');
+                additionalQuestions.classList.remove('show');
+                firstQuestion.classList.remove('slide-out');
+                setTimeout(() => {
+                    additionalQuestions.style.display = 'none';
+                }, 500);
+            }
 
-        document.getElementById('doneButton').addEventListener('click', function() {
-            // Show the spinner while processing
-            document.getElementById('spinnerContainer').style.display = 'block';
+            document.getElementById('doneButton').addEventListener('click', function() {
+                // Show the spinner while processing
+                document.getElementById('spinnerContainer').style.display = 'block';
 
-            // Simulate some processing time
-            setTimeout(function() {
-                // Hide spinner and show confirmation message
-                document.getElementById('spinnerContainer').style.display = 'none';
-                document.getElementById('confirmationMessage').style.display = 'block';
-
-                // Show the add more message after confirmation
+                // Simulate some processing time
                 setTimeout(function() {
-                    document.getElementById('confirmationMessage').style.display = 'none';
-                    document.getElementById('addMoreMessage').style.display = 'block';
-                }, 2000);
-            }, 2000); // Simulate a 2-second delay
-        });
+                    // Hide spinner and show confirmation message
+                    document.getElementById('spinnerContainer').style.display = 'none';
+                    document.getElementById('confirmationMessage').style.display = 'block';
 
-        function goBackToInterestPage() {
-            window.location.href = 'interestPage.html'; // Redirect to interestPage.html
-        }
+                    // Show the add more message after confirmation
+                    setTimeout(function() {
+                        document.getElementById('confirmationMessage').style.display = 'none';
+                        document.getElementById('addMoreMessage').style.display = 'block';
+                    }, 2000);
+                }, 2000); // Simulate a 2-second delay
+            });
 
-        function finish() {
-            alert('Thank you for adding your pet!');
-            window.location.href = 'interestPage.html'; // Redirect to interestPage.html
-        }
-    </script>
+            function goBackToInterestPage() {
+                window.location.href = 'interestPage.html'; // Redirect to interestPage.html
+            }
+
+            function finish() {
+                alert('Thank you for adding your pet!');
+                window.location.href = 'ownerHome.html';
+            }
+        </script>
 </body>
 </html>

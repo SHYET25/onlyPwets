@@ -840,7 +840,7 @@
             <a href="ownerHome.html" class="loading-link"><i class="fas fa-home deactive"></i></a>
             <a href="ownerMarket.html" class="loading-link"><i class="fas fa-store active"></i></a>
             <a href="ownerVet.html" class="loading-link"><i class="fas fa-stethoscope deactive"></i></a>
-            <a href="ownerCommunity.html" class="loading-link"><i class="fas fa-users deactive"></i></a>
+            <a href="ownerCommunity.php" class="loading-link"><i class="fas fa-users deactive"></i></a>
         </div>
     
         <!-- Bottom Icon -->
@@ -869,8 +869,28 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Modal -->
+                        <!-- Product Card 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#adultDryModal">
+                                <img src="media/images/products/2.jpg" class="card-img-top product-card-img-top" alt="Product 2">
+                                <div class="card-body">
+                                    <h5 class="card-title product-card-title">Product Name 2</h5>
+                                    <p class="card-text product-card-text">$29.99</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Product Card 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#pedigreeDryModal">
+                                <img src="media/images/products/3.jpg" class="card-img-top product-card-img-top" alt="Product 3">
+                                <div class="card-body">
+                                    <h5 class="card-title product-card-title">Product Name 3</h5>
+                                    <p class="card-text product-card-text">$39.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Pedigree 1 -->
                         <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -901,8 +921,72 @@
                             </div>
                         </div>
 
+                        <!-- Modal Pedigree 2 -->
+                        <div class="modal fade" id="pedigreeDryModal" tabindex="-1" aria-labelledby="pedigreeDryModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="pedigreeDryModalLabel">Pedigree Dog Food (Dry)</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Product Image -->
+                                        <div class="text-center mb-3">
+                                            <img src="media/images/products/3.jpg" class="img-fluid" alt="Pedigree Dry Dog Food">
+                                        </div>
+                                        <!-- Product Details -->
+                                        <div class="product-details">
+                                            <h5 class="mb-3">Product Description</h5>
+                                            <p>Pedigree Dry Dog Food provides balanced and complete nutrition for dogs of all breeds. It contains essential proteins and fiber for optimal health.</p>
+                                            
+                                            <h5>Price: <span class="text-success">$25.99</span></h5>
+                                            
+                                            <h5>Weight: 5kg</h5>
+                                            <h5>Ingredients: Whole grains, meat, soy, natural oils, and minerals.</h5>
+                                            
+                                            <button class="btn btn-primary mt-3">Add to Cart</button>
+                                            <button class="btn btn-primary mt-3">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Modal Pedigree 3 -->
+                        <div class="modal fade" id="adultDryModal" tabindex="-1" aria-labelledby="adultDryModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="adultDryModalLabel">Dry Dog Food for Adult Dogs</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Product Image -->
+                                        <div class="text-center mb-3">
+                                            <img src="media/images/products/2.jpg" class="img-fluid" alt="Dry Dog Food for Adults">
+                                        </div>
+                                        <!-- Product Details -->
+                                        <div class="product-details">
+                                            <h5 class="mb-3">Product Description</h5>
+                                            <p>This dry dog food is formulated specifically for adult dogs, ensuring their daily dietary needs are met. Helps maintain strong teeth and healthy digestion.</p>
+                                            
+                                            <h5>Price: <span class="text-success">$30.99</span></h5>
+                                            
+                                            <h5>Weight: 7kg</h5>
+                                            <h5>Ingredients: Chicken, corn, wheat, fish oil, and essential vitamins.</h5>
+                                            
+                                            <button class="btn btn-primary mt-3">Add to Cart</button>
+                                            <button class="btn btn-primary mt-3">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -911,7 +995,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -920,7 +1004,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -929,7 +1013,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -938,7 +1022,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -947,30 +1031,9 @@
                             </div>
                         </div>
                 
-                        <!-- Product Card 2 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
-                                <img src="media/images/products/2.jpg" class="card-img-top product-card-img-top" alt="Product 2">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Product Name 2</h5>
-                                    <p class="card-text product-card-text">$29.99</p>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Product Card 3 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
-                                <img src="media/images/products/3.jpg" class="card-img-top product-card-img-top" alt="Product 3">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Product Name 3</h5>
-                                    <p class="card-text product-card-text">$39.99</p>
-                                </div>
-                            </div>
-                        </div>
                         <!-- Product Card 1 -->
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -980,7 +1043,7 @@
                         </div>
                         <!-- Product Card 1 -->
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card"data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -990,7 +1053,7 @@
                         </div>
                         <!-- Product Card 1 -->
                         <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card">
+                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
                                 <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
                                 <div class="card-body">
                                     <h5 class="card-title product-card-title">Product Name 1</h5>
@@ -1011,7 +1074,57 @@
                         <input id="postText" class="form-control mb-2" rows="3" placeholder="Search an Item"></input>
                         <button id="postButton" class="btn btn-warning w-100">Search</button>
                     </div>
-                    <button id="sellItem" class="btn btn-warning w-100"><i id="cartIcon" class="fa-solid fa-cart-shopping"></i>Sell an Item</button>
+                    <!-- Button to trigger the modal -->
+                    <button id="sellItem" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#sellItemModal">
+                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i> Sell an Item
+                    </button>
+
+                    <!-- Modal for composing a post -->
+                    <div class="modal fade" id="sellItemModal" tabindex="-1" aria-labelledby="sellItemModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-center">
+                                    <h5 class="modal-title font-weight-bold" id="sellItemModalLabel">Sell an Item</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-2">
+                                        <label for="categoryDropdown" class="form-label">Select Category</label>
+                                        <div class="dropdown">
+                                            <button
+                                                class="btn btn-secondary dropdown-toggle w-100"
+                                                type="button"
+                                                id="categoryDropdownButton"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                Item Category
+                                            </button>
+                                            <ul class="dropdown-menu w-100" id="categoryDropdownMenu">
+                                                <input
+                                                    type="text"
+                                                    class="form-control dropdown-item"
+                                                    id="categorySearch"
+                                                    placeholder="Search categories..."
+                                                    oninput="filterCategories()">
+                                                <li><button class="dropdown-item category-item">Electronics</button></li>
+                                                <li><button class="dropdown-item category-item">Furniture</button></li>
+                                                <li><button class="dropdown-item category-item">Clothing</button></li>
+                                                <li><button class="dropdown-item category-item">Books</button></li>
+                                                <li><button class="dropdown-item category-item">Toys</button></li>
+                                                <li><button class="dropdown-item category-item">Others</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <textarea id="postText" class="form-control mb-2" rows="3" placeholder="What's on your mind?"></textarea>
+                                    <input type="file" id="postImage" class="form-control mb-2">
+                                    <button id="postButton" class="btn btn-warning w-100">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
                     <div id="petMateList" class="card p-3 cardPet">
                         
                         <h5><b>Customer Chats</b></h5>
@@ -1260,6 +1373,19 @@
             });
         });
         
+        function filterCategories() {
+            const searchInput = document.getElementById("categorySearch").value.toLowerCase();
+            const items = document.querySelectorAll(".category-item");
+            
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchInput)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
 
         document.querySelectorAll('.chat-item').forEach(item => {
             item.addEventListener('click', function () {

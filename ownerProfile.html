@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market</title>
+    <title>Profile</title>
     <link rel="icon" href="media/images/utilities/paw.png" type="image/png">
 
     <!-- BS LINKS -->
@@ -840,7 +840,7 @@
             <a href="ownerHome.html" class="loading-link"><i class="fas fa-home deactive"></i></a>
             <a href="ownerMarket.html" class="loading-link"><i class="fas fa-store deactive"></i></a>
             <a href="ownerVet.html" class="loading-link"><i class="fas fa-stethoscope deactive"></i></a>
-            <a href="ownerCommunity.php" class="loading-link"><i class="fas fa-users deactive"></i></a>
+            <a href="ownerCommunity.html" class="loading-link"><i class="fas fa-users deactive"></i></a>
         </div>
     
         <!-- Bottom Icon -->
@@ -1175,34 +1175,59 @@
         </div>
         <style>
             #petProfile {
-            height: 80%;  /* Increased size */
-            width: 100%;
-            border-radius: 50%;
-            border: 20px solid #f2f2f2;
-            margin-top: 20px;  /* Moves it lower */
-        }
+                height: 180px; /* Fixed size for a consistent layout */
+                width: 180px;
+                border-radius: 50%;
+                border: 5px solid #f2f2f2;
+                margin-top: 20px;
+                object-fit: cover; /* Ensures the image scales properly */
+            }
+        
+            .profile-container {
+                background-color: #ffffff;
+                border: 1px solid #e0e0e0;
+                border-radius: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin-top: 20px;
+            }
+        
+            .profile-container h1 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+        
+            .profile-container h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                color: #555;
+            }
+        
+            .profile-container p {
+                margin: 0;
+                font-size: 0.9rem;
+                color: #888;
+            }
         </style>
+        
         <div id="rightSide" class="col-md-3">
-                <!-- Left Spacer Column -->
-                <div class="col-md-2" style="background-color: #f2f2f2;"></div>
-        
-                <!-- Profile Column -->
-                <div class="col-md-8 profile-column">
-                    <div class="profile-container text-center">
-                        <img src="media/images/petPics/retriever.jpg" id="petProfile" alt="Pet Profile Picture">
-                        <div class="profile-details">
-                            <h1>Buddy</h1>
-                            <p>Owner's Name:</p>
-                            <h3>John Doe</h3>
-                            <p>Contact Number:</p>
-                            <h3>09998064762</h3>
-                        </div>
-                    </div>
+            <!-- Profile Container -->
+            <div class="profile-container text-center">
+                <!-- Profile Picture -->
+                <img src="media/images/petPics/retriever.jpg" id="petProfile" alt="Pet Profile Picture">
+                
+                <!-- Profile Details -->
+                <div class="profile-details mt-3">
+                    <h1>Buddy</h1>
+                    <p>Owner's Name:</p>
+                    <h3>John Doe</h3>
+                    <p>Contact Number:</p>
+                    <h3>09998064762</h3>
                 </div>
-        
-                <!-- Right Spacer Column -->
-                <div class="col-md-2" style="background-color: #f2f2f2;"></div>
+            </div>
         </div>
+        
     </div>
 
     

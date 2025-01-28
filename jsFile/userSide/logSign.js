@@ -1,5 +1,5 @@
 $('#btnLog').on('click', function () {
-    window.location.href = "ownerHome.html";
+    window.location.href = "chooseUser.html";
 });
 
 $('#btnSign').on('click', function () {

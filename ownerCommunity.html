@@ -561,7 +561,7 @@
             border-color: #85d2ff;
         }
 
-        #appointmentCard {
+        #inviteCard {
             width: 100%; /* Default width in "public" */
             height: 60px; /* Collapsed height */
             overflow: hidden; /* Hide content when collapsed */
@@ -572,23 +572,23 @@
             border-color: #85d2ff;
         }
 
-        #appointmentCard:hover {
+        #inviteCard:hover {
             height: 40%; /* Expand to a fixed height on hover */
         }
         
         /* Add this fallback to ensure consistent behavior */
-        #appointmentCard:focus,
-        #appointmentCard:active {
+        #inviteCard:focus,
+        #inviteCard:active {
             width: 100%; /* Maintain 100% width if focused or active */
             height: 220px; /* Set height to same as hover to maintain consistency */
         }
 
-        #appointmentCard h5{
+        #inviteCard h5{
             font-weight: 900;
          }
 
 
-        #appointmentList {
+        #inviteList {
        
             height: 100%;
             overflow: hidden;
@@ -596,13 +596,13 @@
             
         }
 
-       #appointmentList:hover {
+       #inviteList:hover {
             overflow: auto; /* Add scroll if content overflows */
             scrollbar-gutter: stable; /* Prevent scrollbar shift */
             
         }
 
-        .appoints:hover {
+        .invites:hover {
             background-color: #f1f1f1;
             cursor: pointer;
             border-radius: 8px;
@@ -612,6 +612,11 @@
         .allignments {
             text-align: left;
         }
+
+        #postComposer h5{
+            font-weight: 900;
+         }
+ 
 
         #petMateList {
             width: 100%; /* Default width in "public" */
@@ -639,14 +644,7 @@
            
         }
 
-        #postComposer h5{
-           font-weight: 900;
-        }
-
-
-
-        
-
+    
         .petCollection {
             height: 100%;
            
@@ -658,28 +656,6 @@
             overflow: auto;
             scrollbar-gutter: stable; /* Prevent scrollbar shift */
             height: 100%;
-        }
-        
-        #postComposer:hover {
-            height: 40%; /* Expand to a fixed height on hover */
-        }
-        
-        /* Add this fallback to ensure consistent behavior */
-        #postComposer:focus,
-        #postComposer:active {
-            width: 100%; /* Maintain 100% width if focused or active */
-            height: 220px; /* Set height to same as hover to maintain consistency */
-        }
-
-        .pet-img, .friend-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        #petList{
-            margin-top: 10px;
         }
 
         .pet-img {
@@ -724,6 +700,94 @@
             flex: 1; /* Ensures the name stays on the leftmost side */
             text-align: left; /* Align text to the left */
         }
+        
+        #postComposer:hover {
+            height: 50%; /* Expand to a fixed height on hover */
+        }
+        
+        .pet-img, .friend-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        #petList{
+            margin-top: 10px;
+        }
+
+        /* Add this fallback to ensure consistent behavior */
+        #postComposer:focus,
+        #postComposer:active {
+            width: 100%; /* Maintain 100% width if focused or active */
+            height: 220px; /* Set height to same as hover to maintain consistency */
+        }
+
+        #groupList {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 15px;
+            background-color: #85d2ff;
+            border-color: #85d2ff;
+            overflow: hidden;
+        }
+        
+        .groupHeader {
+            background-color: #38b6ff;
+            padding: 10px;
+            border-radius: 10px;
+            color: black;
+        }
+        
+        .groupCollection {
+            max-height:200px;
+            overflow-y: auto;
+        }
+
+        .groupCollection {
+       
+            height: 100%;
+            overflow: hidden;
+            scrollbar-gutter: stable; /* Prevent scrollbar shift */
+            
+        }
+
+       .groupCollection:hover {
+            overflow: auto; /* Add scroll if content overflows */
+            scrollbar-gutter: stable; /* Prevent scrollbar shift */
+            
+        }
+        
+        .groupCollection::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .groupCollection::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            border-radius: 10px;
+        }
+        
+        .group-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #007bff;
+        }
+        
+        .group-item {
+            padding: 10px;
+            transition: background-color 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .group-item:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        
+
+        
         
         .profile-img {
             width: 40px;
@@ -810,7 +874,10 @@
             padding: 5px;
         }
         
-        
+        .googleMapInvite {
+            text-decoration: none;
+            color: #000;
+        }
         
     </style>
 
@@ -943,46 +1010,73 @@
                 
             </div>
             <div id="middleContent" class="col-md-3">
-                <div id="appointmentCard" class="card p-3">
-                    <div class="d-flex justify-content-center align-items-center position-relative">
-                        <h5 class="text-center mb-0">Invites</h5>
+                <div id="inviteCard" class="card p-3 shadow">
+                    <div class="d-flex justify-content-center align-items-center position-relative mb-2">
+                        <h5 class="text-center mb-0">Event Invites</h5>
                         <span class="badge bg-danger rounded-pill position-absolute end-0">3</span>
                     </div>
-                    <ul id="appointmentList" class="list-unstyled mt-3">
-                        <li class="appoints d-flex align-items-center mb-3">
-                            <img src="media/images/pets/buddy.jpg" alt="Buddy" class="rounded-circle me-3" width="40" height="40">
-                            <div class="text-start">
-                                <strong>Buddy</strong>
-                                <p class="mb-0">Rabies Vaccine</p>
-                                <small>2025-02-10 at 10:00 AM</small>
-                            </div>
-                        </li>
+                    <ul id="inviteList" class="list-unstyled mt-3">
+                        <!-- Invite 1 -->
+                        <a class="googleMapInvite" href="https://www.google.com/maps/place/Imus+City+Plaza/@14.4289951,120.9185429,15z/data=!4m10!1m2!2m1!1simus+park!3m6!1s0x3397d2f49ad11aaf:0xf90dd57f9d1bae3a!8m2!3d14.4289951!4d120.9365673!15sCglpbXVzIHBhcmtaCyIJaW11cyBwYXJrkgEJY2l0eV9wYXJrmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU5QTnpsWWRIUm5SUkFC4AEA-gEECAAQRw!16s%2Fg%2F11f2_qy5cb?entry=ttu&g_ep=EgoyMDI1MDEyMi4wIKXMDSoASAFQAw%3D%3D">
+                            <li class="invites d-flex align-items-center justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="media/images/petPics/retriever.jpg" alt="Buddy" class="rounded-circle me-3" width="40" height="40">
+                                    <div class="text-start">
+                                        <strong>Buddy</strong>
+                                        <p class="mb-0">Dog Meetup</p>
+                                        <small>2025-02-10 at 3:00 PM</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-success btn-sm me-2">✔</button>
+                                    <button class="btn btn-danger btn-sm">✖</button>
+                                </div>
+                            </li>
+                        </a>
                         <hr>
-                        <li class="appoints d-flex align-items-center mb-3">
-                            <img src="media/images/pets/max.jpg" alt="Max" class="rounded-circle me-3" width="40" height="40">
-                            <div class="text-start">
-                                <strong>Max</strong>
-                                <p class="mb-0">Deworming</p>
-                                <small>2025-02-11 at 1:30 PM</small>
-                            </div>
-                        </li>
+                        <!-- Invite 2 -->
+                        <a class="googleMapInvite" href="https://www.google.com/maps/place/Paw+%26+Bean+Cafe/@14.4387909,120.9306644,17z/data=!3m1!4b1!4m6!3m5!1s0x3397d3467bd45d61:0xf030036b5e79914b!8m2!3d14.4387909!4d120.9332447!16s%2Fg%2F11s78905m9?entry=ttu&g_ep=EgoyMDI1MDEyMi4wIKXMDSoASAFQAw%3D%3D">
+                            <li class="invites d-flex align-items-center justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="media/images/petPics/siamese.jpg" alt="Max" class="rounded-circle me-3" width="40" height="40">
+                                    <div class="text-start">
+                                        <strong>Max</strong>
+                                        <p class="mb-0">Paw Party at Pet Café</p>
+                                        <small>2025-02-11 at 5:30 PM</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-success btn-sm me-2">✔</button>
+                                    <button class="btn btn-danger btn-sm">✖</button>
+                                </div>
+                            </li>
+                        </a>
                         <hr>
-                        <li class="appoints d-flex align-items-center">
-                            <img src="media/images/pets/bella.jpg" alt="Bella" class="rounded-circle me-3" width="40" height="40">
-                            <div class="text-start">
-                                <strong>Bella</strong>
-                                <p class="mb-0">General Checkup</p>
-                                <small>2025-02-12 at 9:00 AM</small>
+                        <!-- Invite 3 -->
+                        <li class="invites d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img src="media/images/petPics/pig.jpg" alt="Bella" class="rounded-circle me-3" width="40" height="40">
+                                <div class="text-start">
+                                    <strong>Bella</strong>
+                                    <p class="mb-0">Morning Walk</p>
+                                    <small>2025-02-12 at 8:00 AM</small>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-success btn-sm me-2">✔</button>
+                                <button class="btn btn-danger btn-sm">✖</button>
                             </div>
                         </li>
                     </ul>
                 </div>
+                
 
                 <div id="petMateList" class="card p-3 cardPet">
                     <div class="petMateH5">
-                        <h5 class="">Vets Near Me</h5>
+                        <h5 class="">Furs Around ME</h5>
                     </div>
-                    <div id="map" style="height: 500px; width: 100%;"></div>
+
+                    <div id="map" style="height: 500px; width: 100%; margin-top:10px;"></div>
 
                     
                 </div>
@@ -995,264 +1089,128 @@
             <div id="centerContent" class="col-md-5">
                 <div id="personalizedContainer">
                     <div class="post-list">
+                        <!-- Event Invite Post -->
                         <div class="post-card card p-3 mb-4">
                             <div class="post-header d-flex align-items-center mb-3">
-                                <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                <img src="media/images/profiles/group1.jpg" alt="Event Creator Profile" class="profile-img me-3">
                                 <div>
-                                    <div class="d-flex">
-                                        <div class="fw-bold">John Doe</div>
-                                        <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
-                                    </div>
-                                    <div class="text-muted">Asked on: 2025-01-11 14:30</div>
+                                    <div class="fw-bold">Play Park Group</div>
+                                    <div class="text-muted">Invited on: 2025-01-20 10:00</div>
                                 </div>
                             </div>
                             <div class="post-content mb-3">
-                                <!-- Question Content -->
-                                <p class="fw-bold">What vaccinations are recommended for a 2-month-old puppy?</p>
+                                <p class="fw-bold">You're invited to join the <strong>Annual Pet Vaccination Awareness Drive</strong>!</p>
+                                <img src="media/images/posts/vaccineInvite.jpg" alt="Pet Vaccination Drive" class="event-img mb-3">
+                                <p>Details:</p>
+                                <ul>
+                                    <li><strong>Event Name:</strong> Pet Vaccination Drive</li>
+                                    <li><strong>Date:</strong> 2025-02-05</li>
+                                    <li><strong>Time:</strong> 10:00 AM - 4:00 PM</li>
+                                    <li><strong>Location:</strong> Green Valley Park</li>
+                                </ul>
+                                <p>Join us for a day dedicated to pet health and vaccination awareness. Bring your pets and get free consultations from certified vets!</p>
                             </div>
-                    
-                            <!-- Answer Section -->
-                            <div class="post-footer">
-                                <div class="answer-card card p-2 mb-2">
-                                    <div class="answer-header d-flex align-items-center mb-2">
-                                        <img src="media/images/profiles/vet1.jpg" alt="Vet Profile" class="profile-img me-2">
-                                        <div>
-                                            <div class="fw-bold">Dr. Sarah Vet</div>
-                                            <div class="text-muted">Replied on: 2025-01-12 09:45</div>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <p>At 2 months, your puppy should receive vaccinations for Distemper, Parvovirus, and Hepatitis. Consult your local vet to create a complete vaccination schedule.</p>
-                                    </div>
-                                </div>
-                    
-                                <div class="answer-card card p-2 mb-2">
-                                    <div class="answer-header d-flex align-items-center mb-2">
-                                        <img src="media/images/profiles/vet2.jpg" alt="Vet Profile" class="profile-img me-2">
-                                        <div>
-                                            <div class="fw-bold">Dr. Alex Vet</div>
-                                            <div class="text-muted">Replied on: 2025-01-12 10:15</div>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <p>I agree with Dr. Sarah. Additionally, discuss Rabies vaccination if it's required in your area for puppies over 3 months old.</p>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Actions -->
+                
                             <div class="post-actions d-flex justify-content-start mt-3">
                                 <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-thumbs-up"></i> Like
+                                    <i class="fas fa-calendar-check"></i> Accept Invite
                                 </button>
                                 <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-comment"></i> Reply
+                                    <i class="fas fa-calendar-times"></i> Decline Invite
                                 </button>
                                 <button class="btn btn-light btn-sm">
-                                    <i class="fas postFas fa-share"></i> Share
+                                    <i class="fas fa-share"></i> Share Event
                                 </button>
                             </div>
                         </div>
-                        <!-- Forum Question 1 -->
+                
+                        <!-- Post with Like and Comment Actions -->
                         <div class="post-card card p-3 mb-4">
                             <div class="post-header d-flex align-items-center mb-3">
-                                <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                <img src="media/images/profiles/prof3.jpg" alt="User Profile" class="profile-img me-3">
                                 <div>
-                                    <div class="d-flex">
-                                        <div class="fw-bold">John Doe</div>
-                                        <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
-                                    </div>
-                                    <div class="text-muted">Asked on: 2025-01-11 14:30</div>
+                                    <div class="fw-bold">John Smith</div>
+                                    <div class="text-muted">Posted on: 2025-01-25 14:30</div>
+                                    <div class="text-muted">Shared in: <strong>Riverside Walks</strong></div>
                                 </div>
                             </div>
                             <div class="post-content mb-3">
-                                <p class="fw-bold">What vaccinations are recommended for a 2-month-old puppy?</p>
+                                <p class="fw-bold">"Had a great time at the dog park today! Max met so many new friends."</p>
+                                <img src="media/images/posts/dogpark.jpg" alt="Dog Park" class="event-img mb-3">
                             </div>
-                            <div class="post-footer">
-                                <div class="answer-card card p-2 mb-2">
-                                    <div class="answer-header d-flex align-items-center mb-2">
-                                        <img src="media/images/profiles/vet1.jpg" alt="Vet Profile" class="profile-img me-2">
-                                        <div>
-                                            <div class="fw-bold">Dr. Sarah Vet</div>
-                                            <div class="text-muted">Replied on: 2025-01-12 09:45</div>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <p>At 2 months, your puppy should receive vaccinations for Distemper, Parvovirus, and Hepatitis. Consult your local vet to create a complete vaccination schedule.</p>
-                                    </div>
-                                </div>
-                            </div>
+                
                             <div class="post-actions d-flex justify-content-start mt-3">
                                 <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-thumbs-up"></i> Like
-                                </button>
-                                <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-comment"></i> Reply
+                                    <i class="fas fa-thumbs-up"></i> Like
                                 </button>
                                 <button class="btn btn-light btn-sm">
-                                    <i class="fas postFas fa-share"></i> Share
+                                    <i class="fas fa-comment"></i> Comment
                                 </button>
                             </div>
                         </div>
-                    
-                        <!-- Forum Question 2 -->
+                
+                        <!-- Another Event Invite Post -->
                         <div class="post-card card p-3 mb-4">
                             <div class="post-header d-flex align-items-center mb-3">
-                                <img src="media/images/profiles/234.jpg" alt="User Profile" class="profile-img me-3">
+                                <img src="media/images/profiles/group3.webp" alt="Pet Club Profile" class="profile-img me-3">
                                 <div>
-                                    <div class="fw-bold">Jane Smith</div>
-                                    <div class="text-muted">Asked on: 2025-01-15 10:20</div>
+                                    <div class="fw-bold">Cuddle Club</div>
+                                    <div class="text-muted">Invited on: 2025-01-22 16:00</div>
                                 </div>
                             </div>
                             <div class="post-content mb-3">
-                                <p class="fw-bold">How often should I bathe my golden retriever?</p>
+                                <p class="fw-bold">Join our upcoming <strong>Dog Socialization Meetup</strong>!</p>
+                                <img src="media/images/posts/social.jpg" alt="Dog Socialization Meetup" class="event-img mb-3">
+                                <p>Details:</p>
+                                <ul>
+                                    <li><strong>Event Name:</strong> Dog Socialization Meetup</li>
+                                    <li><strong>Date:</strong> 2025-03-10</li>
+                                    <li><strong>Time:</strong> 2:00 PM - 5:00 PM</li>
+                                    <li><strong>Location:</strong> Sunset Dog Park</li>
+                                </ul>
+                                <p>This is a fantastic opportunity to let your dogs socialize with other pets and their owners. We’ll have fun activities, treats, and more!</p>
                             </div>
-                            <div class="post-footer">
-                                <div class="answer-card card p-2 mb-2">
-                                    <div class="answer-header d-flex align-items-center mb-2">
-                                        <img src="media/images/profiles/vet2.jpg" alt="Vet Profile" class="profile-img me-2">
-                                        <div>
-                                            <div class="fw-bold">Dr. Alex Vet</div>
-                                            <div class="text-muted">Replied on: 2025-01-15 12:10</div>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <p>Golden Retrievers generally need a bath every 6–8 weeks unless they get very dirty. Overbathing can dry out their skin.</p>
-                                    </div>
-                                </div>
-                            </div>
+                
                             <div class="post-actions d-flex justify-content-start mt-3">
                                 <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-thumbs-up"></i> Like
+                                    <i class="fas fa-calendar-check"></i> Accept Invite
                                 </button>
                                 <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-comment"></i> Reply
+                                    <i class="fas fa-calendar-times"></i> Decline Invite
                                 </button>
                                 <button class="btn btn-light btn-sm">
-                                    <i class="fas postFas fa-share"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    
-                        <!-- Forum Question 3 -->
-                        <div class="post-card card p-3 mb-4">
-                            <div class="post-header d-flex align-items-center mb-3">
-                                <img src="media/images/profiles/345.jpg" alt="User Profile" class="profile-img me-3">
-                                <div>
-                                    <div class="fw-bold">Emma Johnson</div>
-                                    <div class="text-muted">Asked on: 2025-01-17 08:45</div>
-                                </div>
-                            </div>
-                            <div class="post-content mb-3">
-                                <p class="fw-bold">What are some signs of allergies in cats?</p>
-                            </div>
-                            <div class="post-footer">
-                                <div class="answer-card card p-2 mb-2">
-                                    <div class="answer-header d-flex align-items-center mb-2">
-                                        <img src="media/images/profiles/vet1.jpg" alt="Vet Profile" class="profile-img me-2">
-                                        <div>
-                                            <div class="fw-bold">Dr. Sarah Vet</div>
-                                            <div class="text-muted">Replied on: 2025-01-17 11:00</div>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <p>Common signs include excessive scratching, sneezing, watery eyes, and vomiting. It’s best to visit a vet to determine the cause and treatment.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-actions d-flex justify-content-start mt-3">
-                                <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-thumbs-up"></i> Like
-                                </button>
-                                <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-comment"></i> Reply
-                                </button>
-                                <button class="btn btn-light btn-sm">
-                                    <i class="fas postFas fa-share"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    
-                        <!-- Forum Question 4 -->
-                        <div class="post-card card p-3 mb-4">
-                            <div class="post-header d-flex align-items-center mb-3">
-                                <img src="media/images/profiles/456.jpg" alt="User Profile" class="profile-img me-3">
-                                <div>
-                                    <div class="fw-bold">Chris Brown</div>
-                                    <div class="text-muted">Asked on: 2025-01-18 13:15</div>
-                                </div>
-                            </div>
-                            <div class="post-content mb-3">
-                                <p class="fw-bold">What should I feed my 6-week-old kitten?</p>
-                            </div>
-                            <div class="post-footer">
-                                <div class="answer-card card p-2 mb-2">
-                                    <div class="answer-header d-flex align-items-center mb-2">
-                                        <img src="media/images/profiles/vet2.jpg" alt="Vet Profile" class="profile-img me-2">
-                                        <div>
-                                            <div class="fw-bold">Dr. Alex Vet</div>
-                                            <div class="text-muted">Replied on: 2025-01-18 14:30</div>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <p>Offer high-quality kitten food designed for their age, either wet or dry. Avoid giving cow’s milk as it can upset their stomach.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-actions d-flex justify-content-start mt-3">
-                                <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-thumbs-up"></i> Like
-                                </button>
-                                <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-comment"></i> Reply
-                                </button>
-                                <button class="btn btn-light btn-sm">
-                                    <i class="fas postFas fa-share"></i> Share
-                                </button>
-                            </div>
-                        </div>
-                    
-                        <!-- Forum Question 5 -->
-                        <div class="post-card card p-3 mb-4">
-                            <div class="post-header d-flex align-items-center mb-3">
-                                <img src="media/images/profiles/567.jpg" alt="User Profile" class="profile-img me-3">
-                                <div>
-                                    <div class="fw-bold">Liam Taylor</div>
-                                    <div class="text-muted">Asked on: 2025-01-19 09:50</div>
-                                </div>
-                            </div>
-                            <div class="post-content mb-3">
-                                <p class="fw-bold">Is it normal for my dog to eat grass?</p>
-                            </div>
-                            <div class="post-footer">
-                                <div class="answer-card card p-2 mb-2">
-                                    <div class="answer-header d-flex align-items-center mb-2">
-                                        <img src="media/images/profiles/vet1.jpg" alt="Vet Profile" class="profile-img me-2">
-                                        <div>
-                                            <div class="fw-bold">Dr. Sarah Vet</div>
-                                            <div class="text-muted">Replied on: 2025-01-19 11:10</div>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <p>Yes, it’s common and usually not harmful. However, if it’s frequent or excessive, it could indicate digestive issues or nutritional deficiencies.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-actions d-flex justify-content-start mt-3">
-                                <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-thumbs-up"></i> Like
-                                </button>
-                                <button class="btn btn-light btn-sm me-2">
-                                    <i class="fas postFas fa-comment"></i> Reply
-                                </button>
-                                <button class="btn btn-light btn-sm">
-                                    <i class="fas postFas fa-share"></i> Share
+                                    <i class="fas fa-share"></i> Share Event
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
+                
+                <style>
+                    .profile-img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                
+                    .event-img {
+                        width: 100%;
+                        height: auto;
+                        border-radius: 8px;
+                    }
+                
+                    .post-card {
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        border-radius: 10px;
+                    }
+                
+                    .post-actions button {
+                        border-radius: 6px;
+                    }
+                </style>
+                
+                
     
             </div>
     
@@ -1260,64 +1218,64 @@
             <div id="rightContent" class="col-md-3">
                 
                     <div id="postComposer" class="card p-3">
-                        <h5>Compose a Question</h5>
+                        <h5>Send an Invite</h5>
                         <br>
-                        <textarea id="postText" class="form-control mb-2" rows="3" placeholder="What's your Question?"></textarea>
+                        <div class="mb-3">
+                            <select class="form-select" id="vetSelect" required>
+                                <option value="" disabled selected>Select a Group</option>
+                                <option value="Dr. Sarah Vet">Park Playgroup</option>
+                                <option value="Dr. Alex Vet">Riverside Walks</option>
+                                <option value="Dr. Alex Vet">Cuddle Club</option>
+                            </select>
+                        </div>
+                        <textarea id="postText" class="form-control mb-2" rows="3" placeholder="What's your invite?"></textarea>
                         <input type="file" id="postImage" class="form-control mb-2">
                         <button id="postButton" class="btn btn-warning w-100">Post</button>
                     </div>
-                    <div id="petMateList" class="card p-3 cardPet">
-                        <div class="petMateH5">
-                            <h5 class="">Followed Vets</h5>
+                    <div id="groupList" class="card p-3 shadow">
+                        <div class="groupHeader text-center">
+                            <h5 class="fw-bold mb-0">Groups</h5>
                         </div>
-                        <div class="petCollection">
-                            <div class="pet-item d-flex align-items-center justify-content-between mb-2">
+                        <div class="groupCollection mt-3">
+                            <!-- Group 1 -->
+                            <div class="group-item d-flex align-items-center justify-content-between mb-3">
                                 <div class="d-flex align-items-center">
-                                    <img src="media/images/petPics/siamese.jpg" alt="Pet 2" class="pet-img me-2">
+                                    <img src="media/images/profiles/group1.jpg" alt="Park Playgroup" class="group-img me-3">
                                     <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Dra. Elizabeth</div>
-                                        </div>
-                                        <div class="text-muted">Surgery Expert</div>
+                                        <div class="fw-bold">Park Playgroup</div>
+                                        <div class="text-muted">Meet for playdates at the park!</div>
                                     </div>
                                 </div>
-                                <span class="badge bg-danger rounded-pill">1</span>
+                                <span class="badge bg-primary rounded-pill">12 Members</span>
                             </div>
                             <hr>
-                            <div class="pet-item d-flex align-items-center justify-content-between mb-2">
+                            <!-- Group 2 -->
+                            <!-- Group 3 -->
+                            <div class="group-item d-flex align-items-center justify-content-between mb-3">
                                 <div class="d-flex align-items-center">
-                                    <img src="media/images/petPics/siamese.jpg" alt="Pet 2" class="pet-img me-2">
+                                    <img src="media/images/profiles/group2.jpg" alt="Riverside Walks" class="group-img me-3">
                                     <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Dr. John</div>
-                                        </div>
-                                        <div class="text-muted">Medicine Expert</div>
+                                        <div class="fw-bold">Riverside Walks</div>
+                                        <div class="text-muted">Join us for morning strolls!</div>
                                     </div>
                                 </div>
-                                <span class="badge bg-danger rounded-pill">3</span>
+                                <span class="badge bg-primary rounded-pill">5 Members</span>
                             </div>
                             <hr>
-                            <div class="pet-item d-flex align-items-center mb-2">
-                                <img src="media/images/petPics/retriever.jpg" alt="Pet 1" class="pet-img me-2">
-                                <div>
-                                    <div class="pet-name me-auto">
-                                        <div class="fw-bold">Dra. Jessie</div>
+                            <!-- Group 4 -->
+                            <div class="group-item d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <img src="media/images/profiles/group3.webp" alt="Cuddle Club" class="group-img me-3">
+                                    <div>
+                                        <div class="fw-bold">Cuddle Club</div>
+                                        <div class="text-muted">For pets who love cuddles!</div>
                                     </div>
-                                    <div class="text-muted">Fracture Expert</div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="pet-item d-flex align-items-center mb-2">
-                                <img src="media/images/petPics/siamese.jpg" alt="Pet 2" class="pet-img me-2">
-                                <div>
-                                    <div class="pet-name me-auto">
-                                        <div class="fw-bold">Dr. Joel</div>
-                                    </div>
-                                    <div class="text-muted">Surgery Expert</div>
-                                </div>
+                                <span class="badge bg-primary rounded-pill">20 Members</span>
                             </div>
                         </div>
                     </div>
+                    
                 
                 
                 

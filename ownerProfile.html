@@ -644,7 +644,7 @@
         }
 
         .pet-item-profile img{
-            border: 4px solid #000;
+            border: 4px solid #007bff;
         }
 
         .pet-name {
@@ -838,7 +838,7 @@
         <!-- Top Links -->
         <div class="top-links">
             <a href="ownerHome.html" class="loading-link"><i class="fas fa-home deactive"></i></a>
-            <a href="ownerMarket.html" class="loading-link"><i class="fas fa-store active"></i></a>
+            <a href="ownerMarket.html" class="loading-link"><i class="fas fa-store deactive"></i></a>
             <a href="ownerVet.html" class="loading-link"><i class="fas fa-stethoscope deactive"></i></a>
             <a href="ownerCommunity.php" class="loading-link"><i class="fas fa-users deactive"></i></a>
         </div>
@@ -846,438 +846,365 @@
         <!-- Bottom Icon -->
         <a href="ownerProfile.html" class="bottom-icon pet-item-profile"><img src="media/images/petPics/retriever.jpg" alt="Pet 1" class="pet-img-profile me-2"></a>
     </div>
-    
-    
-    
-
     <div id="main" class="container-fluid">
         <div class="row mainContent">
             <!-- Left Content -->
-            <div id="leftContent" class="col-md-1">
-                
+            <div id="leftContent" class="col-md-2">
+
             </div>
-            <div id="centerContent" class="col-md-8">
+            <div id="centerContent" class="col-md-7">
                 <div id="personalizedContainer">
-                    <div class="row" id="productGrid">
-                        <!-- Product Card 1 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
+                    <div class="post-list">
+                        <div class="post-card card p-3 mb-4">
+                            <div class="post-header d-flex align-items-center mb-3">
+                                <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="fw-bold">John Doe</div>
+                                        <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Product Card 2 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#adultDryModal">
-                                <img src="media/images/products/2.jpg" class="card-img-top product-card-img-top" alt="Product 2">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">TopBreed Dry Dog Food Adult</h5>
-                                    <p class="card-text product-card-text">$29.99</p>
+                            <div class="post-content mb-3">
+                                <!-- Sample caption -->
+                                <p>This is a sample caption describing the photos below. Buddy enjoying a sunny day at the park!</p>
+                                
+                                <!-- Photo Grid with Modal Trigger -->
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy in the park" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy playing with a ball" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy resting" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                
-                        <!-- Product Card 3 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#pedigreeDryModal">
-                                <img src="media/images/products/3.jpg" class="card-img-top product-card-img-top" alt="Product 3">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Dry Dog Food</h5>
-                                    <p class="card-text product-card-text">$39.99</p>
+                            <div class="post-footer d-flex justify-content-between align-items-center">
+                                <div class="tagged-users">
+                                    <span class="text-muted">Tagged: </span>
+                                    <span class="tagged-user">Alex Johnson, Samantha Lee</span>
+                                </div>
+                                <div class="post-time text-muted">
+                                    <span>Posted on: 2025-01-11 14:30</span>
                                 </div>
                             </div>
+                            <div class="post-actions d-flex justify-content-start mt-3">
+                                <button class="btn btn-light btn-sm me-2">
+                                    <i class="fas postFas fa-thumbs-up"></i> Like
+                                </button>
+                                <button class="btn btn-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#commentModal">
+                                    <i class="fas postFas fa-comment"></i> Comment
+                                </button>
+                                <button class="btn btn-light btn-sm"  data-bs-toggle="modal" data-bs-target="#shareModal">
+                                    <i class="fas postFas fa-share"></i> Share
+                                </button>
+                            </div>
                         </div>
-                        <style>
-                            .product-img {
-                                max-width: 300px;
-                                max-height: 300px;
-                                width: auto;
-                                height: auto;
-                                object-fit: cover;
-                            }
-                        </style>
-                        
-                        <!-- Modal Pedigree 1 -->
-                        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+
+                        <!-- Comment Modal -->
+                        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="productModalLabel">Pedigree Chopped Ground Dinner</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <div class="modal-header justify-content-center position-relative">
+                                        <h5 class="modal-title text-center" id="commentModalLabel">Comments</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="top: 20px; right: 15px; position: absolute;"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- Product Image -->
-                                        <div class="text-center mb-3">
-                                            <img src="media/images/products/1.jpg" class="img-fluid product-img" alt="Pedigree Food">
+                                        <!-- Post Author Details -->
+                                        <div class="post-header d-flex align-items-center mb-3">
+                                            <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                            <div>
+                                                <div class="d-flex">
+                                                    <div class="fw-bold">John Doe</div>
+                                                    <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
+                                                </div>
+                                                <div class="text-muted">Pet: Buddy</div>
+                                            </div>
                                         </div>
-                                        <!-- Product Details -->
-                                        <div class="product-details">
-                                            <h5 class="mb-3">Product Description</h5>
-                                            <p>This is a premium quality dog food from Pedigree. It is designed to give your dog all the essential nutrients for a healthy life.</p>
-                                            
-                                            <h5>Price: <span class="text-success">$19.99</span></h5>
-                                            
-                                            <h5>Weight: 2kg</h5>
-                                            <h5>Ingredients: Chicken, rice, vegetable oil, vitamins.</h5>
-                                            
-                                            <button class="btn btn-primary mt-3">Add to Cart</button>
-                                            <button class="btn btn-primary mt-3">Buy Now</button>
+                                        <!-- Post Content with Pictures -->
+                                        <div class="post-content mb-3">
+                                            <p>This is a sample caption describing the photos below. Buddy enjoying a sunny day at the park!</p>
+                                            <div class="row g-2">
+                                                <div class="col-4">
+                                                    <img src="media/images/posts/buddy.jpg" alt="Buddy in the park" class="img-fluid rounded img-thumbnail">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="media/images/posts/buddy.jpg" alt="Buddy playing with a ball" class="img-fluid rounded img-thumbnail">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="media/images/posts/buddy.jpg" alt="Buddy resting" class="img-fluid rounded img-thumbnail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Comments Section -->
+                                        <div id="commentsSection">
+                                            <div class="comment mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <img src="media/images/profiles/456.jpg" alt="User" class="profile-img me-2">
+                                                    <div>
+                                                        <span class="fw-bold">Alex Johnson</span>
+                                                        <p class="mb-1">Buddy looks so happy! What a lovely day!</p>
+                                                        <div class="text-muted small">Posted 2 hours ago</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Additional comments can go here -->
+                                        </div>
+                                        <!-- Add Comment Section -->
+                                        <div class="mt-3">
+                                            <div class="d-flex align-items-center">
+                                                <textarea class="form-control" rows="1" placeholder="Write a comment..."></textarea>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm mt-2">Post Comment</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Modal Pedigree 2 -->
-                        <div class="modal fade" id="pedigreeDryModal" tabindex="-1" aria-labelledby="pedigreeDryModalLabel" aria-hidden="true">
+                        <!-- Share Modal -->
+                        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="pedigreeDryModalLabel">Pedigree Dry Dog Food</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <div class="modal-header justify-content-center position-relative">
+                                        <h5 class="modal-title text-center" id="shareModalLabel">Share Post</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="top: 0; right: 15px; position: absolute;"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- Product Image -->
-                                        <div class="text-center mb-3">
-                                            <img src="media/images/products/3.jpg" class="img-fluid product-img" alt="Pedigree Dry Dog Food">
+                                        <!-- Post Author Details -->
+                                        <div class="post-header d-flex align-items-center mb-3">
+                                            <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                            <div>
+                                                <div class="d-flex">
+                                                    <div class="fw-bold">John Doe</div>
+                                                    <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
+                                                </div>
+                                                <div class="text-muted">Pet: Buddy</div>
+                                            </div>
                                         </div>
-                                        <!-- Product Details -->
-                                        <div class="product-details">
-                                            <h5 class="mb-3">Product Description</h5>
-                                            <p>Pedigree Dry Dog Food provides balanced and complete nutrition for dogs of all breeds. It contains essential proteins and fiber for optimal health.</p>
-                                            
-                                            <h5>Price: <span class="text-success">$25.99</span></h5>
-                                            
-                                            <h5>Weight: 5kg</h5>
-                                            <h5>Ingredients: Whole grains, meat, soy, natural oils, and minerals.</h5>
-                                            
-                                            <button class="btn btn-primary mt-3">Add to Cart</button>
-                                            <button class="btn btn-primary mt-3">Buy Now</button>
+                                        <!-- Post Content with Pictures -->
+                                        <div class="post-content mb-3">
+                                            <p>This is a sample caption describing the photos below. Buddy enjoying a sunny day at the park!</p>
+                                            <div class="row g-2">
+                                                <div class="col-4">
+                                                    <img src="media/images/posts/buddy.jpg" alt="Buddy in the park" class="img-fluid rounded img-thumbnail">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="media/images/posts/buddy.jpg" alt="Buddy playing with a ball" class="img-fluid rounded img-thumbnail">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="media/images/posts/buddy.jpg" alt="Buddy resting" class="img-fluid rounded img-thumbnail">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Modal Pedigree 3 -->
-                        <div class="modal fade" id="adultDryModal" tabindex="-1" aria-labelledby="adultDryModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="adultDryModalLabel">TopBreed Dry Dog Food Adult</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!-- Product Image -->
-                                        <div class="text-center mb-3">
-                                            <img src="media/images/products/2.jpg" class="img-fluid product-img" alt="Dry Dog Food for Adults">
-                                        </div>
-                                        <!-- Product Details -->
-                                        <div class="product-details">
-                                            <h5 class="mb-3">Product Description</h5>
-                                            <p>This dry dog food is formulated specifically for adult dogs, ensuring their daily dietary needs are met. Helps maintain strong teeth and healthy digestion.</p>
-                                            
-                                            <h5>Price: <span class="text-success">$30.99</span></h5>
-                                            
-                                            <h5>Weight: 7kg</h5>
-                                            <h5>Ingredients: Chicken, corn, wheat, fish oil, and essential vitamins.</h5>
-                                            
-                                            <button class="btn btn-primary mt-3">Add to Cart</button>
-                                            <button class="btn btn-primary mt-3">Buy Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Product Card 1 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product Card 1 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card"data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Product Card 1 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 product-card" data-bs-toggle="modal" data-bs-target="#productModal">
-                                <img src="media/images/products/1.jpg" class="card-img-top product-card-img-top" alt="Product 1">
-                                <div class="card-body">
-                                    <h5 class="card-title product-card-title">Pedigree Chopped Ground Dinner</h5>
-                                    <p class="card-text product-card-text">$19.99</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Right Content -->
-            <div id="rightContent" class="col-md-3">
-                
-                    <div id="postComposer" class="card p-3">
-                        <h5>Search a Product</h5>
-                        <br>
-                        <input id="postText" class="form-control mb-2" rows="3" placeholder="Search an Item"></input>
-                        <button id="postButton" class="btn btn-warning w-100">Search</button>
-                    </div>
-                    <!-- Button to trigger the modal -->
-                    <button id="sellItem" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#sellItemModal">
-                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i> Sell an Item
-                    </button>
-
-                    <!-- Modal for composing a post -->
-                    <div class="modal fade" id="sellItemModal" tabindex="-1" aria-labelledby="sellItemModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header justify-content-center">
-                                    <h5 class="modal-title font-weight-bold" id="sellItemModalLabel">Sell an Item</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-2">
-                                        <label for="categoryDropdown" class="form-label">Select Category</label>
-                                        <div class="dropdown">
-                                            <button
-                                                class="btn btn-secondary dropdown-toggle w-100"
-                                                type="button"
-                                                id="categoryDropdownButton"
-                                                data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                Item Category
+                                        <!-- Share Options -->
+                                        <div class="share-options">
+                                            <button class="btn btn-light btn-block mb-2 d-flex align-items-center">
+                                                <i class="fa-solid fa-share me-2"></i>
+                                                Share Now (Friends)
                                             </button>
-                                            <ul class="dropdown-menu w-100" id="categoryDropdownMenu">
-                                                <input
-                                                    type="text"
-                                                    class="form-control dropdown-item"
-                                                    id="categorySearch"
-                                                    placeholder="Search categories..."
-                                                    oninput="filterCategories()">
-                                                <li><button class="dropdown-item category-item">Electronics</button></li>
-                                                <li><button class="dropdown-item category-item">Furniture</button></li>
-                                                <li><button class="dropdown-item category-item">Clothing</button></li>
-                                                <li><button class="dropdown-item category-item">Books</button></li>
-                                                <li><button class="dropdown-item category-item">Toys</button></li>
-                                                <li><button class="dropdown-item category-item">Others</button></li>
-                                            </ul>
+                                            <button class="btn btn-light btn-block mb-2 d-flex align-items-center">
+                                                <i class="fa-solid fa-message me-2"></i>
+                                                Share in a Message
+                                            </button>
+                                            <button class="btn btn-light btn-block mb-2 d-flex align-items-center">
+                                                <i class="fa-solid fa-users me-2"></i>
+                                                Share to a Group
+                                            </button>
+                                            <button class="btn btn-light btn-block mb-2 d-flex align-items-center">
+                                                <i class="fa-solid fa-link me-2"></i>
+                                                Copy Link
+                                            </button>
                                         </div>
                                     </div>
-                                    <textarea id="postText" class="form-control mb-2" rows="3" placeholder="What's on your mind?"></textarea>
-                                    <input type="file" id="postImage" class="form-control mb-2">
-                                    <button id="postButton" class="btn btn-warning w-100">Post</button>
                                 </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="post-card card p-3 mb-4">
+                            <div class="post-header d-flex align-items-center mb-3">
+                                <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="fw-bold">John Doe</div>
+                                        <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-content mb-3">
+                                <!-- Sample caption -->
+                                <p>This is a sample caption describing the photos below. Buddy enjoying a sunny day at the park!</p>
+                                
+                                <!-- Photo Grid with Modal Trigger -->
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy in the park" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy playing with a ball" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy resting" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-footer d-flex justify-content-between align-items-center">
+                                <div class="tagged-users">
+                                    <span class="text-muted">Tagged: </span>
+                                    <span class="tagged-user">Alex Johnson, Samantha Lee</span>
+                                </div>
+                                <div class="post-time text-muted">
+                                    <span>Posted on: 2025-01-11 14:30</span>
+                                </div>
+                            </div>
+                            <div class="post-actions d-flex justify-content-start mt-3">
+                                <button class="btn btn-light btn-sm me-2">
+                                    <i class="fas postFas fa-thumbs-up"></i> Like
+                                </button>
+                                <button class="btn btn-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#commentModal">
+                                    <i class="fas postFas fa-comment"></i> Comment
+                                </button>
+                                <button class="btn btn-light btn-sm"  data-bs-toggle="modal" data-bs-target="#shareModal">
+                                    <i class="fas postFas fa-share"></i> Share
+                                </button>
+                            </div>
+                        </div>
+                        <div class="post-card card p-3 mb-4">
+                            <div class="post-header d-flex align-items-center mb-3">
+                                <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="fw-bold">John Doe</div>
+                                        <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
+                                    </div>
+                                    <div class="text-muted">Pet: Buddy</div>
+                                </div>
+                            </div>
+                            <div class="post-content mb-3">
+                                <!-- Sample caption -->
+                                <p>This is a sample caption describing the photos below. Buddy enjoying a sunny day at the park!</p>
+                                
+                                <!-- Photo Grid with Modal Trigger -->
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy in the park" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy playing with a ball" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy resting" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-footer d-flex justify-content-between align-items-center">
+                                <div class="tagged-users">
+                                    <span class="text-muted">Tagged: </span>
+                                    <span class="tagged-user">Alex Johnson, Samantha Lee</span>
+                                </div>
+                                <div class="post-time text-muted">
+                                    <span>Posted on: 2025-01-11 14:30</span>
+                                </div>
+                            </div>
+                            <div class="post-actions d-flex justify-content-start mt-3">
+                                <button class="btn btn-light btn-sm me-2">
+                                    <i class="fas postFas fa-thumbs-up"></i> Like
+                                </button>
+                                <button class="btn btn-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#commentModal">
+                                    <i class="fas postFas fa-comment"></i> Comment
+                                </button>
+                                <button class="btn btn-light btn-sm"  data-bs-toggle="modal" data-bs-target="#shareModal">
+                                    <i class="fas postFas fa-share"></i> Share
+                                </button>
+                            </div>
+                        </div>
+                        <div class="post-card card p-3 mb-4">
+                            <div class="post-header d-flex align-items-center mb-3">
+                                <img src="media/images/profiles/123.jpg" alt="User Profile" class="profile-img me-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="fw-bold">John Doe</div>
+                                        <span id="postScopeContainer"><i id="postScope" class="fa-solid fa-user-group"></i></span>
+                                    </div>
+                                    <div class="text-muted">Pet: Buddy</div>
+                                </div>
+                            </div>
+                            <div class="post-content mb-3">
+                                <!-- Sample caption -->
+                                <p>This is a sample caption describing the photos below. Buddy enjoying a sunny day at the park!</p>
+                                
+                                <!-- Photo Grid with Modal Trigger -->
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy in the park" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy playing with a ball" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="media/images/posts/buddy.jpg" alt="Buddy resting" class="img-fluid rounded img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-footer d-flex justify-content-between align-items-center">
+                                <div class="tagged-users">
+                                    <span class="text-muted">Tagged: </span>
+                                    <span class="tagged-user">Alex Johnson, Samantha Lee</span>
+                                </div>
+                                <div class="post-time text-muted">
+                                    <span>Posted on: 2025-01-11 14:30</span>
+                                </div>
+                            </div>
+                            <div class="post-actions d-flex justify-content-start mt-3">
+                                <button class="btn btn-light btn-sm me-2">
+                                    <i class="fas postFas fa-thumbs-up"></i> Like
+                                </button>
+                                <button class="btn btn-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#commentModal">
+                                    <i class="fas postFas fa-comment"></i> Comment
+                                </button>
+                                <button class="btn btn-light btn-sm"  data-bs-toggle="modal" data-bs-target="#shareModal">
+                                    <i class="fas postFas fa-share"></i> Share
+                                </button>
                             </div>
                         </div>
                     </div>
-                    
-
-
-                    <div id="petMateList" class="card p-3 cardPet">
-                        
-                        <h5><b>Customer Chats</b></h5>
-                        
-                        <div class="petCollection">
-                            <div id="chatList" style="max-height: 250px;">
-                                <!-- Sample Chat Item -->
-                                <div class="chat-item d-flex align-items-center mb-2" data-customer="John Doe" data-message="Is this still available?">
-                                    <img src="media/images/profiles/123.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 1">
-                                    <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Christoff</div>
-                                        </div>
-                                        <small>Is this still available?</small>
-                                    </div>
-                                </div>
-            
-                                <div class="chat-item d-flex align-items-center mb-2" data-customer="Jane Smith" data-message="Can I get a discount?">
-                                    <img src="media/images/profiles/213.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 2">
-                                    <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Mikko</div>
-                                        </div>
-                                        <small>Can I get a discount?</small>
-                                    </div>
-                                </div>
-            
-                                <div class="chat-item d-flex align-items-center mb-2" data-customer="Mike Johnson" data-message="When can you ship this?">
-                                    <img src="media/images/profiles/321.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 3">
-                                    <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Renz</div>
-                                        </div>
-                                        <small>When can you ship this?</small>
-                                    </div>
-                                </div>
-                                <div class="chat-item d-flex align-items-center mb-2" data-customer="Mike Johnson" data-message="When can you ship this?">
-                                    <img src="media/images/profiles/321.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 3">
-                                    <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Renz</div>
-                                        </div>
-                                        <small>When can you ship this?</small>
-                                    </div>
-                                </div>
-                                <div class="chat-item d-flex align-items-center mb-2" data-customer="Mike Johnson" data-message="When can you ship this?">
-                                    <img src="media/images/profiles/321.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 3">
-                                    <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Renz</div>
-                                        </div>
-                                        <small>When can you ship this?</small>
-                                    </div>
-                                </div>
-                                <div class="chat-item d-flex align-items-center mb-2" data-customer="Mike Johnson" data-message="When can you ship this?">
-                                    <img src="media/images/profiles/321.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 3">
-                                    <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Renz</div>
-                                        </div>
-                                        <small>When can you ship this?</small>
-                                    </div>
-                                </div>
-                                <div class="chat-item d-flex align-items-center mb-2" data-customer="Mike Johnson" data-message="When can you ship this?">
-                                    <img src="media/images/profiles/321.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 3">
-                                    <div>
-                                        <div class="pet-name me-auto">
-                                            <div class="fw-bold">Renz</div>
-                                        </div>
-                                        <small>When can you ship this?</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn btn-outline-primary w-100 mt-2" id="viewChatsButton">View All Chats</button>
-                        </div>
-                    </div>
-                
-                
-                
-            </div>
+                </div>
         </div>
-    </div>
-    
-
-    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 id="chatModalLabel" class="modal-title">Chat with <span id="customerName"></span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="chatContent">
-                    <!-- Chat content will be dynamically loaded here -->
-                </div>
-                <div class="modal-footer">
-                    <input type="text" id="chatInput" class="form-control me-2" placeholder="Type a message...">
-                    <button type="button" class="btn btn-primary" id="sendMessage">Send</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="viewChat" tabindex="-1" aria-labelledby="viewChatLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 id="viewChatLabel" class="modal-title">Chat with <span id="customerName"></span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="viewChatContent">
-                    <div id="chatList" style="max-height: 250px; overflow-y: auto;">
-                        <!-- Sample Chat Item -->
-                        <div class="chat-item d-flex align-items-center mb-2" data-customer="John Doe" data-message="Is this still available?">
-                            <img src="media/images/profiles/123.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 1">
-                            <div>
-                                <strong>John Doe</strong><br>
-                                <small>Is this still available?</small>
-                            </div>
-                        </div>
-    
-                        <div class="chat-item d-flex align-items-center mb-2" data-customer="Jane Smith" data-message="Can I get a discount?">
-                            <img src="media/images/profiles/213.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 2">
-                            <div>
-                                <strong>Jane Smith</strong><br>
-                                <small>Can I get a discount?</small>
-                            </div>
-                        </div>
-    
-                        <div class="chat-item d-flex align-items-center mb-2" data-customer="Mike Johnson" data-message="When can you ship this?">
-                            <img src="media/images/profiles/321.jpg" class="rounded-circle me-2" width="40" height="40" alt="Customer 3">
-                            <div>
-                                <strong>Mike Johnson</strong><br>
-                                <small>When can you ship this?</small>
-                            </div>
+        <style>
+            #petProfile {
+            height: 80%;  /* Increased size */
+            width: 100%;
+            border-radius: 50%;
+            border: 20px solid #f2f2f2;
+            margin-top: 20px;  /* Moves it lower */
+        }
+        </style>
+        <div id="rightSide" class="col-md-3">
+                <!-- Left Spacer Column -->
+                <div class="col-md-2" style="background-color: #f2f2f2;"></div>
+        
+                <!-- Profile Column -->
+                <div class="col-md-8 profile-column">
+                    <div class="profile-container text-center">
+                        <img src="media/images/petPics/retriever.jpg" id="petProfile" alt="Pet Profile Picture">
+                        <div class="profile-details">
+                            <h1>Buddy</h1>
+                            <p>Owner's Name:</p>
+                            <h3>John Doe</h3>
+                            <p>Contact Number:</p>
+                            <h3>09998064762</h3>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    
-                </div>
-            </div>
+        
+                <!-- Right Spacer Column -->
+                <div class="col-md-2" style="background-color: #f2f2f2;"></div>
         </div>
     </div>
+
     
     
 
